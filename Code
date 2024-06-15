@@ -1,0 +1,51 @@
+#include <Servo.h>
+
+  int KEY = 2;
+  int KEY2 = 3;
+  int pos1 = 0;
+  int pos2 = 0;
+
+Servo servo1;
+Servo servo2;
+
+void setup() {
+ servo1.attach(11);
+ servo2.attach(12);
+ pinMode(KEY, INPUT);
+ pinMode(KEY2, INPUT);
+}
+
+void loop(){
+  if(digitalRead(KEY)==HIGH && pos1==0 && pos2==0) {
+       pos1=180;
+       pos2=90;
+       servo1.write(pos1);
+       delay(1000);        
+       servo2.write(pos2);
+         
+        }
+  if(digitalRead(KEY)==HIGH && pos1==180 && pos2==90) {
+       pos1=0;
+       pos2=0;
+       servo2.write(pos2);
+       delay(1000);
+       servo1.write(pos1);
+
+      }
+      // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  if (digitalRead(KEY2) == HIGH && pos1==0 && pos2==0) {
+       pos1=180;
+       pos2=90;
+       servo1.write(pos1);
+       delay(1000);        
+       servo2.write(pos2);
+    }
+  if(digitalRead(KEY2) == HIGH && pos1==180 && pos2==90) {
+       pos1=0;
+       pos2=0;
+       servo2.write(pos2);
+       delay(1000);
+       servo1.write(pos1);
+      }
+  }
+
