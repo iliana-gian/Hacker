@@ -2,8 +2,8 @@
 
   int KEY = 2;
   int KEY2 = 3;
-  int pos1 = 0;
-  int pos2 = 0;
+  int pos1 = 0; //Door position
+  int pos2 = 0; //Seat position
 
 Servo servo1;
 Servo servo2;
